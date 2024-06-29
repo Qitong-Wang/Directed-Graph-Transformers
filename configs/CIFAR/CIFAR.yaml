@@ -1,0 +1,24 @@
+scheme: CIFAR
+model_name: CIFAR
+distributed: false         # Set = true for multi-gpu
+batch_size: 32             # For 6 GPUs: 12//6=2
+num_epochs: 200
+model_height: 4
+node_width: 32
+edge_width: 32
+num_heads: 8
+max_lr: 0.0005
+node_ffn_multiplier: 2.0
+edge_ffn_multiplier: 2.0
+upto_hop: 3
+dataloader_workers: 10       # For multi-process data fetch
+pe_random_neg: true
+pe_calculated_dim : 8
+pe_output_dim : 8
+pe_type: svd
+evaluation_type : 'validation'
+attn_maskout: 0.1
+stop_epochs: 10
+num_virtual_nodes: 0
+batch_norm: False
+layer_norm: True
